@@ -34,11 +34,11 @@ fn main() {
 
 3. 🌟🌟🌟
 
-> Tips: If we don't explicitly assign a type to a variable, then the compiler will infer one for us.
+> Conseils : Si nous n'attribuons pas explicitement un type à une variable, le compilateur en déduira un pour nous.
 
 ```rust,editable
 
-// Modify `assert_eq!` to make it work
+// Modifie `assert_eq!` pour que çela fonctionne
 fn main() {
     let x = 5;
     assert_eq!("u32".to_string(), type_of(&x));
@@ -46,7 +46,7 @@ fn main() {
     println!("Success!");
 }
 
-// Get the type of given variable, return a string representation of the type  , e.g "i8", "u8", "i32", "u32"
+// Obtiens le type d'une variable donnée, renvoie une représentation sous forme de chaîne de caractères du type, par exemple "i8", "u8", "i32", "u32".
 fn type_of<T>(_: &T) -> String {
     format!("{}", std::any::type_name::<T>())
 }
@@ -55,7 +55,7 @@ fn type_of<T>(_: &T) -> String {
 4. 🌟🌟
 ```rust,editable
 
-// Fill the blanks to make it work
+// Remplir les blancs pour que cela fonctionne
 fn main() {
     assert_eq!(i8::MAX, __);
     assert_eq!(u8::MAX, __);
@@ -67,7 +67,7 @@ fn main() {
 5. 🌟🌟
 ```rust,editable
 
-// Fix errors and panics to make it work
+// Corriger les erreurs et les paniques pour que cela fonctionne
 fn main() {
    let v1 = 251_u8 + 8;
    let v2 = i8::checked_add(251, 8).unwrap();
@@ -75,14 +75,18 @@ fn main() {
 }
 ```
 
- [checked_add][checked_add]: Adds two numbers, checking for overflow. If overflow happens, None is returned.
- [unwrap][unwrap]: Returns the contained Ok value, consuming the self value
+ [checked_add](https://docs.rs/num/latest/num/trait.CheckedAdd.html#tymethod.checked_add/)
+: Effectue une addition qui renvoie None au lieu d'être contournée en cas de dépassement de capacité.
+
+[unwrap](https://doc.rust-lang.org/stable/std/result/enum.Result.html#method.unwrap)
+: Renvoie la valeur contenue dans Ok, en consommant la valeur propre.
+
 
 
 6. 🌟🌟
 ```rust,editable
 
-// Modify `assert!` to make it work
+// Modifier `assert!` pour que cela fonctionne
 fn main() {
     let v = 1_024 + 0xff + 0o77 + 0b1111_1111;
     assert!(v == 1579);
@@ -92,12 +96,12 @@ fn main() {
 ```
 
 
-### Floating-Point
+### Virgule flottante
 7. 🌟
 
 ```rust,editable
 
-// Fill the blank to make it work
+// Remplir le vide pour que cela fonctionne
 fn main() {
     let x = 1_000.000_1; // ?
     let y: f32 = 0.12; // f32
@@ -112,7 +116,7 @@ fn type_of<T>(_: &T) -> String {
 }
 ```
 
-8. 🌟🌟 Make it work in two distinct ways
+8. 🌟🌟 Le faire fonctionner de deux manières distinctes
 
 ```rust,editable
 
@@ -123,8 +127,10 @@ fn main() {
 }
 ```
 
-### Range
-9. 🌟🌟 Two goals: 1. Modify `assert!` to make it work 2. Make `println!` output: 97 - 122
+### Rayon d'action (range)
+9. 🌟🌟 Deux objectifs :
+    1. Modifier `assert!` pour qu'il fonctionne
+    2. Faire en sorte que `println!` affiche : 97 - 122
 
 ```rust,editable
 fn main() {
@@ -144,7 +150,7 @@ fn main() {
 10. 🌟🌟
 ```rust,editable
 
-// Fill the blanks
+// Remplissez les blancs
 use std::ops::{Range, RangeInclusive};
 fn main() {
     assert_eq!((1..__), Range{ start: 1, end: 5 });
@@ -154,12 +160,12 @@ fn main() {
 }
 ```
 
-### Computations
+### Calculs
 
 11. 🌟
 ```rust,editable
 
-// Fill the blanks and fix the errors
+// Remplir les blancs et corriger les erreurs
 fn main() {
     // Integer addition
     assert!(1u32 + 2 == __);
@@ -187,8 +193,6 @@ fn main() {
 }
 ```
 
-> You can find the solutions [here](https://github.com/sunface/rust-by-practice/blob/master/solutions/basic-types/numbers.md)(under the solutions path), but only use it when you need it
+> Vous pouvez trouver les solutions [ici](https://github.com/sunface/rust-by-practice/blob/master/solutions/basic-types/numbers.md)(sous le chemin des solutions), mais ne l'utilisez que lorsque vous en avez besoin.
 
 
-[checked_add]: https://docs.rs/num/latest/num/trait.CheckedAdd.html#tymethod.checked_add/
-[unwrap]: https://doc.rust-lang.org/stable/std/result/enum.Result.html#method.unwrap
