@@ -4,11 +4,11 @@
 
 1. 🌟
 
-> Tips: If we don't explicitly assign a type to a variable, then the compiler will infer one for us.
+> Conseils: Si nous n'attribuons pas explicitement un type à une variable, le compilateur en déduira un pour nous.
 
 ```rust,editable
 
-// Remove something to make it work
+// Supprimer quelque chose pour le faire fonctionner
 fn main() {
     let x: i32 = 5;
     let mut y: u32 = 5;
@@ -24,7 +24,7 @@ fn main() {
 2. 🌟
 ```rust,editable
 
-// Fill the blank
+// Remplissez le blanc
 fn main() {
     let v: u16 = 38_u8 as __;
 
